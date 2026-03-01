@@ -11,10 +11,11 @@ public class Main {
 
         email.send(n);
         sms.send(n);
-        try {
-            wa.send(n);
-        } catch (RuntimeException ex) {
-            System.out.println("WA ERROR: " + ex.getMessage());
+
+        // Handle WhatsApp result without try-catch
+        SendResult waResult = wa.send(n);
+        if (!waResult.success) {
+            System.out.println("WA ERROR: " + waResult.errorMessage);
             audit.add("WA failed");
         }
 
