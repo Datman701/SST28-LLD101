@@ -17,7 +17,7 @@ public class App {
         MetricsRegistry loaded = loader.loadFromFile(propsPath);
 
         // In a correct design, loader should populate the SAME singleton instance.
-        MetricsRegistry global = MetricsRegistry.getInstance();
+        MetricsRegistry global = MetricsRegistry.INSTANCE;
 
         System.out.println("Loaded registry instance  : " + System.identityHashCode(loaded));
         System.out.println("Global registry instance  : " + System.identityHashCode(global));

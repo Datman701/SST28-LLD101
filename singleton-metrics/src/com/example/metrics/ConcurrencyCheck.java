@@ -28,7 +28,7 @@ public class ConcurrencyCheck {
                 ready.countDown();
                 try {
                     start.await();
-                    MetricsRegistry r = MetricsRegistry.getInstance();
+                    MetricsRegistry r = MetricsRegistry.INSTANCE;
                     identities.add(System.identityHashCode(r));
                 } catch (InterruptedException ignored) {
                     Thread.currentThread().interrupt();
