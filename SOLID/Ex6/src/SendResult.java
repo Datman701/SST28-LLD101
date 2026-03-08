@@ -2,7 +2,7 @@
  * Result of a send operation.
  * Allows senders to report success/failure without throwing exceptions.
  */
-class SendResult {
+public class SendResult {
     public final boolean success;
     public final String errorMessage;
 
@@ -18,9 +18,4 @@ class SendResult {
     public static SendResult failure(String message) {
         return new SendResult(false, message);
     }
-}
-
-// Config class for senders
-public class SenderConfig {
-    public int maxLen = 160;
 }
