@@ -24,4 +24,13 @@ public class ElevatorSystem {
             elevator.step();
         }
     }
+
+    public boolean areAllIdleAndQueuesEmpty() {
+        for (Elevator elevator : elevators) {
+            if (!elevator.isIdleAndQueueEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

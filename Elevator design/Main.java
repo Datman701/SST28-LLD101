@@ -33,6 +33,10 @@ public class Main {
         while (true) {
             System.out.println("------ STEP " + tick + " ------");
             system.step();
+            if (system.areAllIdleAndQueuesEmpty()) {
+                System.out.println("Simulation complete. All elevators are idle and queues are empty.");
+                break;
+            }
             tick++;
         }
     }

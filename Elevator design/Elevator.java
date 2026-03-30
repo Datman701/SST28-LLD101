@@ -98,4 +98,8 @@ public class Elevator {
     public ElevatorPanel getPanel() {
         return panel;
     }
+
+    public boolean isIdleAndQueueEmpty() {
+        return direction == Direction.IDLE && requests.isEmpty();
+    }
 }
